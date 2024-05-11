@@ -1,0 +1,8 @@
+---
+- name: Ensure packages are installed
+  ansible.builtin.apt:
+    name: "{{ ( item is mapping ) | ternary(item.name, item) }}"
+    purge: "{{ item.purge | default(omit) }}"
+    state: "{{ item.state | default(package_state) }}"
+    update_cache: "{{ item.update_cache | default(omit)}}"
+  loop: "{{ packages }}"

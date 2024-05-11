@@ -1,0 +1,10 @@
+galaxy_info:
+  author: Tom Hesse
+  description: Manages packages with apt.
+  license: MIT
+
+  min_ansible_version: 2.1
+
+  galaxy_tags:
+    - apt
+    - packages
